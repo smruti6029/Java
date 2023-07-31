@@ -1,0 +1,46 @@
+/* Custom CSS for the table and page layout */
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.custom-table {
+  width: 100%;
+}
+
+.custom-table thead th {
+  background-color: #333;
+  color: #fff;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.custom-table tbody td {
+  padding: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 20px;
+}
+
+/* Additional custom styles can be added here as needed */

@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* CSS for the container */
+.container {
+    margin: 50px auto;
+    width: 70%;
+    text-align: center;
+}
+
+/* CSS for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table td {
+    text-align: left;
+}
+@keyframes flowing {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+table td {
+    background: linear-gradient(90deg, #f9f9f9, #f2f2f2);
+    background-size: 200% 100%;
+    animation: flowing 2s linear infinite;
+}
+
+
+
