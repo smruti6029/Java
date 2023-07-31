@@ -31,7 +31,7 @@ public class CountStudentEachGrade {
 		            sum += set.getDouble("chem");
 		            sum += set.getDouble("phy");
 		            
-		            count += 6; // Assuming all subjects are present
+		            count += 6; 
 
 		            double avg = sum / count;
 		            String grade =CalculateGrade.getGrade(avg);

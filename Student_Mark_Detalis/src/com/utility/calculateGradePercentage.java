@@ -19,8 +19,10 @@ public class calculateGradePercentage
 		double mark=0.0;
 		for(Double x:marks)
 		{
+			
 			mark+=x;
 		}
+		
 		mark/=6;
 		gradepercentage.put(CalculateGrade.getGrade(mark),mark);
 

@@ -1,7 +1,7 @@
 package com.constantClass;
 
 public class CalculateGrade {
-	public static String getGrade(double percentage)
+	final public static String getGrade(double percentage)
 	{
 		
 		 if (percentage >=80 && percentage <=100 ) {
