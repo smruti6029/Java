@@ -1,0 +1,25 @@
+package com.DAO_FOR_MCQ;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.mcq.entity.UsersInputClass;
+
+public class GetUserDetalisByID {
+
+	public static UsersInputClass getUser(int user_id) {
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		conf.setProperty("hibernate.show_sql", "false");
+		SessionFactory factory = conf.buildSessionFactory();	
+		Session session=factory.openSession();
+		 
+		UsersInputClass user=session.get(UsersInputClass.class, user_id);
+		return user;
+	}
+
+}

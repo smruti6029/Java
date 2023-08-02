@@ -1,0 +1,62 @@
+package com.DAO_FOR_MCQ;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.internal.build.AllowSysOut;
+
+import com.mcq.entity.AnswersForQuestion;
+import com.mcq.entity.Question;
+
+
+public class GetAllQesAns 
+
+{
+
+	public static void getAllQuestion() {
+		
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		SessionFactory factory = conf.buildSessionFactory();	
+		Session session=factory.openSession();
+		Question que=session.get(Question.class,15);
+		List<AnswersForQuestion> ans=que.getAnswers();
+		System.out.println(que.getAnswers());
+		System.out.println(que.getQuestion());
+		System.out.println("--------------------------");
+		System.out.println(ans);
+		for(AnswersForQuestion x:ans)
+		{
+			System.out.println("hii");
+			System.out.println(x);
+		}
+		
+	}
+	
+	
+//	Configuration conf=new Configuration();
+//	conf.configure("hibernate.cfg.xml");
+//	SessionFactory factory = conf.buildSessionFactory();	
+//	Session session=factory.openSession();
+//	
+//	Transaction trn=session.beginTransaction();
+//	System.out.println("All Manager Detalis");
+//	manager manager=session.get(manager.class,id);
+//		List<devloper> devloper =manager.getDevloper();
+//		List<quality>  quality=manager.getQuality();
+//				
+//		for(devloper x:devloper)
+//		{
+//			System.out.println(x.getManager().getName()+"   "+x.getName());
+//			System.out.println();
+//		}
+//		for(quality y:quality)
+//		{
+//			System.out.println(y.getManager().getName()+"   "+y.getName());
+//		}
+//	
+
+}

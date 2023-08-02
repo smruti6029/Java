@@ -1,0 +1,65 @@
+package com.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
+public class manager {
+	@Id
+	private int mannger_id;
+	private String name;
+//	@OneToMany
+//	@JoinColumn(name=" quality_id")
+//	private quality quality;
+//	
+//	@OneToMany
+//	@JoinColumn(name="devloper_id")
+//	private devloper devloper;
+
+	public int getMannger_id() {
+		return mannger_id;
+	}
+
+	public void setMannger_id(int mannger_id) {
+		this.mannger_id = mannger_id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public quality getQuality() {
+		return quality;
+	}
+
+	public void setQuality(quality quality) {
+		this.quality = quality;
+	}
+
+	public devloper getDevloper() {
+		return devloper;
+	}
+
+	public void setDevloper(devloper devloper) {
+		this.devloper = devloper;
+	}
+
+	public manager(int mannger_id, String name, com.entity.quality quality, com.entity.devloper devloper) {
+		super();
+		this.mannger_id = mannger_id;
+		this.name = name;
+	
+	}
+
+	public manager() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

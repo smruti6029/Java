@@ -1,0 +1,16 @@
+package com.adduserdetais;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class AddUserDetalis {
+
+	public static void addUser() 
+	{
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		String name=bf.readLine();
+		String gmail
+		
+	}
+
+}

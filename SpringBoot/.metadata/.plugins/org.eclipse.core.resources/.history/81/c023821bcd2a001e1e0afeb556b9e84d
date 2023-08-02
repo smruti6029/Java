@@ -1,0 +1,17 @@
+package com.DAO_FOR_MCQ;
+
+import com.mcq.entity.QuestionWithAnswer;
+
+public class AnswerTable 
+{
+	
+	
+	
+	public static QuestionWithAnswer answerTable()
+	{
+		
+		return null;
+		
+	}
+
+}

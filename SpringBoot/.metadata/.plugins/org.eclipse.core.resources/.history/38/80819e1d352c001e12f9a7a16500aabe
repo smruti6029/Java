@@ -1,0 +1,11 @@
+package com.entity;
+
+import javax.persistence.Entity;
+
+@Entityt
+public class Messages {
+	
+	int id;
+	
+
+}

@@ -1,0 +1,55 @@
+package com.TeacherManagement.TeacherManagemnt;
+import com.Teacher.*;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	Configuration conf=new Configuration();
+    	conf.configure("hibernate.cfg.xml");
+    	
+    	
+		SessionFactory factory=conf.buildSessionFactory();
+    	
+   
+    	
+    	
+    
+    	tx.commit();
+    	
+    	
+
+    	factory.close();
+    	s.close();
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    
+    }
+}

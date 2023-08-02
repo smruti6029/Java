@@ -1,0 +1,17 @@
+package com.mcq.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="answer_table")
+public class QuestionWithAnswer 
+{
+	@Id
+	int id;
+	int question_id;
+	int answer_id;
+	
+
+}

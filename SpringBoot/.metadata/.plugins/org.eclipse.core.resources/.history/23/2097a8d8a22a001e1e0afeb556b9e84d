@@ -1,0 +1,36 @@
+package com.question;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import com.mcq.*;
+import com.mcq.entity.User_Input_Answer;
+
+public class QuestionAnswer {
+
+	public static void QuestionAns(ArrayList<String> str, String question, int i) throws NumberFormatException, IOException 
+	{
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		User_Input_Answer userinput=new User_Input_Answer();
+		int s=0;
+		System.out.println("Enter Answer");
+		System.out.println("-----------------");
+		System.out.println(question);
+		System.out.println("-----------------------");
+		for(String x:str)
+		{
+			
+			s++;
+			System.out.println("s."+x);
+		}
+		int answer =Integer.parseInt(bf.readLine());
+		userinput.setUser_input(answer);
+		userinput.setId(answer);
+		userinput.setQuestion_id(s);
+		
+		
+	}
+
+}

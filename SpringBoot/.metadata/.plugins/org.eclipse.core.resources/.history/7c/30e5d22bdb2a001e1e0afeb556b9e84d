@@ -1,0 +1,13 @@
+package com.allResult;
+
+public class GetAllResult {
+
+	public static void getAll() 
+	{
+		
+		
+		
+		
+	}
+
+}

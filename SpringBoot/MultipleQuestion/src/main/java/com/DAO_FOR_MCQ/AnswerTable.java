@@ -1,0 +1,36 @@
+package com.DAO_FOR_MCQ;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.mcq.entity.Question;
+import com.mcq.entity.QuestionWithAnswer;
+
+public class AnswerTable 
+{
+	
+	
+	
+	public static List<QuestionWithAnswer> answerTable()
+	{
+		
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		conf.setProperty("hibernate.show_sql", "false");
+		SessionFactory factory = conf.buildSessionFactory();	
+		Session session=factory.openSession();
+		Transaction trn=session.beginTransaction();
+		List<QuestionWithAnswer> RightAnswer = session.createQuery("FROM QuestionWithAnswer", QuestionWithAnswer.class)
+                .setMaxResults(5)
+                .list();
+		
+		
+		return RightAnswer;
+		
+	}
+
+}

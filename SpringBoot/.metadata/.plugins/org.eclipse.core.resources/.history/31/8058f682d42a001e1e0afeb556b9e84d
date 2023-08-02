@@ -1,0 +1,52 @@
+package com.checkresult;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder.In;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.DAO_FOR_MCQ.AnswerTable;
+import com.DAO_FOR_MCQ.UserQuestionAnswerById;
+import com.mcq.entity.QuestionWithAnswer;
+import com.mcq.entity.User_Input_Answer;
+import com.mcq.entity.UsersInputClass;
+
+public class CheckResultWIthId {
+
+	public static void checkResultById() throws NumberFormatException, IOException 
+	
+	
+	{
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		conf.setProperty("hibernate.show_sql", "false");
+		SessionFactory factory = conf.buildSessionFactory();	
+		Session session=factory.openSession();
+		
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter User Id");
+		int user_id=Integer.parseInt(bf.readLine());
+		 
+		UsersInputClass user=session.get(UsersInputClass.class,1);
+		System.out.println("1111111111111111111");
+		 List<User_Input_Answer> questionanswer=UserQuestionAnswerById.getQuestionanswer();
+		 System.out.println("11111111112222222222222222222111111111");
+		 List<QuestionWithAnswer> RightAnswer=AnswerTable.answerTable();
+//		 System.out.println(user.getName());
+		 
+		 
+		 
+		 	
+		
+		
+		
+	}
+
+}

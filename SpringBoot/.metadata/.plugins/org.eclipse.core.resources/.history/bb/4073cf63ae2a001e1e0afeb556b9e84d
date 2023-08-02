@@ -1,0 +1,116 @@
+package com.mcq.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="user_input_answer")
+public class User_Input_Answer 
+{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
+	
+	
+	@JoinColumn(name="answer_id")
+	int user_id;
+	
+	int question_id;
+	int user_input;
+	
+	@OneToOne(mappedBy = "users")
+	private Question question;
+	
+	@OneToOne
+	private QuestionWithAnswer questionAnswer;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+
+	public int getQuestion_id() {
+		return question_id;
+	}
+
+	public void setQuestion_id(int question_id) {
+		this.question_id = question_id;
+	}
+
+	public int getUser_input() {
+		return user_input;
+	}
+
+	public void setUser_input(int user_input) {
+		this.user_input = user_input;
+	}
+
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
+	public QuestionWithAnswer getQuestionAnswer() {
+		return questionAnswer;
+	}
+
+	public void setQuestionAnswer(QuestionWithAnswer questionAnswer) {
+		this.questionAnswer = questionAnswer;
+	}
+
+	public User_Input_Answer(int id, int user_id, int question_id, int user_input, Question question,
+			QuestionWithAnswer questionAnswer) {
+		super();
+		this.id = id;
+		this.user_id = user_id;
+		this.question_id = question_id;
+		this.user_input = user_input;
+		this.question = question;
+		this.questionAnswer = questionAnswer;
+	}
+
+	public User_Input_Answer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,32 @@
+package com.Teacher;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Id;
+
+import org.hibernate.Transaction;
+
+@Entity
+public class Branch 
+{
+	@Id
+	private int id;
+	
+	private String branch;
+	
+	public String getBranch() {
+		return branch;
+	}
+	public void setBranch(String branch) {
+		this.branch = branch;
+	}
+	public Branch(int id) {
+		super();
+		this.id = id;
+		this.branch=branch;
+	
+	}
+	
+	
+
+}

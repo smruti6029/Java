@@ -1,0 +1,10 @@
+package com.Teacher;
+
+import javax.persistence.Id;
+
+public class TeacherDetalis {
+	private String name;
+	@Id
+	private int id;
+
+}

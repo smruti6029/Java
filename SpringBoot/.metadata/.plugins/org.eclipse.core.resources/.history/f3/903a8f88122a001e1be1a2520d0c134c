@@ -1,0 +1,20 @@
+package com.mcq.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="answer_table")
+public class QuestionWithAnswer 
+{
+	@Id
+	int id;
+	
+	@ManyToOne
+	@JoinColumn(name="answer_id")
+	private Question question;
+
+}

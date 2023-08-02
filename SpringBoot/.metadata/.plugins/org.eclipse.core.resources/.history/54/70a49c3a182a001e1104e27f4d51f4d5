@@ -1,0 +1,34 @@
+package com.multiple_choice_question.MultipleQuestion;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import com.InsertData.InsertQuestionAnswer;
+
+
+
+public class App 
+{
+    public static void main( String[] args ) throws NumberFormatException, IOException
+    {
+    	BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+    	while(true)
+    	{
+    		System.out.println("Enter 1 for insert question answer");
+    		int input=Integer.parseInt(bf.readLine());
+    		if(input==1)
+    		{
+    		InsertQuestionAnswer.insertdata();
+    		}
+    		if(input==2)
+    		{
+    			GetAllQuestionAnswer.getQuestion();
+    		}
+    		if(input==5)
+    		{
+    			break;
+    		}
+    	}
+    }
+}

@@ -1,0 +1,74 @@
+package com.InsertData;
+
+import java.util.List;
+
+import com.DAO_FOR_MCQ.DataInsert;
+import com.DAO_FOR_MCQ.GetAllQesAns;
+import com.mcq.entity.AnswersForQuestion;
+import com.mcq.entity.Question;
+import com.mcq.entity.User_Input_Answer;
+import com.mcq.entity.UsersInputClass;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class GetAllQuestionAnswer {
+
+	public static void getQuestion() throws NumberFormatException, IOException 
+	
+	
+	{
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		List<Question> questionanswer=GetAllQesAns.getAllQuestion();
+		
+		User_Input_Answer userinput=new User_Input_Answer();
+		System.out.println("Enter User Id");
+		int user_id=Integer.parseInt(bf.readLine());
+		UsersInputClass user =new UsersInputClass();
+		
+		
+		for(Question que:questionanswer)
+		{
+			
+			List<AnswersForQuestion> ans=que.getAnswers();
+					System.out.println(que.getQuestion());
+					int option=0;
+			
+					for(AnswersForQuestion answer:ans)
+					{
+						option++;
+						System.out.println(option+"."+answer.getAnswers());
+					}
+					System.out.println("Enter Answer");
+					
+					int answers=Integer.parseInt(bf.readLine());
+					
+					userinput.setAns(ans.get(answers-1).getId());
+					if(answers==1) {
+						userinput.setAns(ans.get(answers-1).getId());
+					}
+					if(answers==2) {
+						userinput.setAns(ans.get(answers-1).getId());
+					}
+					if(answers==3) {
+						userinput.setAns(ans.get(answers-1).getId());
+					}
+					if(answers==4) {
+						userinput.setAns(ans.get(answers-1).getId());
+					}
+					userinput.setUser( new UsersInputClass(user_id));
+					userinput.setQuestion(que);
+					DataInsert.addUserInput(userinput);
+					
+				
+					
+					
+		}
+		
+		
+	}
+
+}

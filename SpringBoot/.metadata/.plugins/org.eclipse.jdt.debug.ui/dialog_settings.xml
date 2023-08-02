@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=EmployDetalis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;com.hybernate.demo.EmployDetalis{App.java[App&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=projrctWithHybernate/\/home\/rapidsoft\/.m2\/repository\/org\/hibernate\/hibernate-core\/5.6.5.Final\/hibernate-core-5.6.5.Final.jar=/maven.pomderived=/true=/=/maven.groupId=/org.hibernate=/=/maven.artifactId=/hibernate-core=/=/maven.version=/5.6.5.Final=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&amp;lt;org.hibernate.internal.util.collections(ArrayHelper.class[ArrayHelper&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=TeacherManagemnt/src\/main\/java&amp;lt;com.TeacherManagement.TeacherManagemnt{App.java[App&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=projrctWithHybernate/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;com.hibernate{App.java[App&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=MultipleQuestion/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;com.multiple_choice_question.MultipleQuestion{App.java[App&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="20"/>
+			<item key="DIALOG_Y_ORIGIN" value="20"/>
+			<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+		</section>
+	</section>
+	<section name="expressionHistory">
+	</section>
+</section>

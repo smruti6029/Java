@@ -1,0 +1,61 @@
+package com.allResult;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.DAO_FOR_MCQ.AnswerTable;
+import com.DAO_FOR_MCQ.UserQuestionAnswerById;
+import com.mcq.entity.QuestionWithAnswer;
+import com.mcq.entity.User_Input_Answer;
+import com.mcq.entity.UsersInputClass;
+
+public class GetAllResult {
+
+	public static void getAll() 
+	{
+		
+		
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		conf.setProperty("hibernate.show_sql", "false");
+		SessionFactory factory = conf.buildSessionFactory();	
+		Session session=factory.openSession();
+		
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter User Id");
+		int user_id=Integer.parseInt(bf.readLine());
+		 
+		List<UsersInputClass> users=session.get("From UsersInputClass",UsersInputClass.class);
+		
+		
+		 List<User_Input_Answer> userquestionanswer = UserQuestionAnswerById.getQuestionanswer();
+		 List<QuestionWithAnswer> RightAnswer=AnswerTable.answerTable();
+		 
+		 Integer marks = 0;
+		 
+		 for (QuestionWithAnswer orginalAnswer : RightAnswer) {
+		 
+		 	for (User_Input_Answer userAnswer : userquestionanswer) {
+		 		if (userAnswer.getUser().getId() == user_id) {
+		 			if (userAnswer.getQuestion().getId() == orginalAnswer.getQuestion().getId()) {
+		 				if (userAnswer.getAns().getId() == orginalAnswer.getAnswer().getId()) {
+		 					marks++;
+		 				}
+		 			}
+		 		}
+		 	}
+
+		 
+		 }
+		 System.out.println(user.getName()+"    " + user.getEmail()+" Mark-  "+ marks);
+		 	
+		
+	}
+
+}

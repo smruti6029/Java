@@ -1,0 +1,52 @@
+package com.Teacher;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
+public class TeacherDetalis {
+	
+	@Id
+	@GeneratedValue(strategy =GenerationType.IDENTITY )
+	private int id;
+	private String name;
+		
+	@OneToOne
+	@JoinColumn(name="branch_id")
+	private Branch teacher_branch;
+	
+	
+	
+	public TeacherDetalis(String name) {
+		super();
+		this.name = name;
+	}
+	public Branch getTeacher_branch() {
+		return teacher_branch;
+	}
+	public TeacherDetalis(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	public void setTeacher_branch(Branch teacher_branch) {
+		this.teacher_branch = teacher_branch;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.adduserdetais;
+
+public class AddUserDetalis {
+
+	public static void addUser() {
+		
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.Teacher;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
+public class TeacherDetalis {
+	private String name;
+	@Id
+	private int id;
+
+}

@@ -1,0 +1,145 @@
+package com.mcq.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.ManyToAny;
+
+@Entity
+@Table(name="user_input_answer")
+public class User_Input_Answer 
+{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
+	
+	
+
+//	int user_id;
+	
+//	int question_id;
+//	int user_input;
+	
+	@OneToOne
+	private Question question;
+	
+	@OneToOne
+	private AnswersForQuestion ans;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private UsersInputClass user;
+
+
+	
+
+	public User_Input_Answer(int id, Question question, AnswersForQuestion ans, UsersInputClass user) {
+		super();
+		this.id = id;
+		this.question = question;
+		this.ans = ans;
+		this.user = user;
+	}
+
+	public UsersInputClass getUser() {
+		return user;
+	}
+
+	public void setUser(UsersInputClass user) {
+		this.user = user;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+//	public int getUser_id() {
+//		return user_id;
+//	}
+//
+//	public void setUser_id(int user_id) {
+//		this.user_id = user_id;
+//	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	
+	
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
+	public AnswersForQuestion getAns() {
+		return ans;
+	}
+
+	public void setAns(AnswersForQuestion ans) {
+		this.ans = ans;
+	}
+
+	public User_Input_Answer(int id, int user_id, Question question, AnswersForQuestion ans) {
+		super();
+		this.id = id;
+		
+		this.question = question;
+		this.ans = ans;
+	}
+
+	public User_Input_Answer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+	public User_Input_Answer(int id, int user_id, Question question, AnswersForQuestion ans, UsersInputClass user) {
+		super();
+		this.id = id;
+		
+		this.question = question;
+		this.ans = ans;
+		
+	}
+
+//	public void setUser(int user_id) {
+//		this.user_id=user_id;
+//		
+//		
+//	}
+}
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

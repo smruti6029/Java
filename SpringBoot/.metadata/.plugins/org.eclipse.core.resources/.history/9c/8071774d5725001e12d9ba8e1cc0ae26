@@ -1,0 +1,44 @@
+package com.hibernate;
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	Configuration conf=new Configuration();
+    	conf.configure("hibernate.cfg.xml");
+    	SessionFactory factory = conf.buildSessionFactory();
+    	Employes st=new Employes(4,"Rapift","BB","141");
+    	System.out.println(st);
+
+    	Session session=factory.openSession();
+    	///
+//    	session.save(st);
+    	
+    	Transaction trn=session.beginTransaction();
+    	
+    	
+    	Employes employes = session.get(Employes.class,1);
+    	System.out.println(employes.getAddress());
+    	System.out.println(employes.toString());
+    	
+    	String address = employes.getAddress();
+    	System.out.println(address);
+    	
+    	
+    	trn.commit();
+    
+    	session.close();
+    	
+   
+ 
+    	
+    	
+    }
+}
+ 

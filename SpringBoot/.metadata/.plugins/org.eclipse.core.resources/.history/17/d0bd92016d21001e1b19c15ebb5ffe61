@@ -1,0 +1,31 @@
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+
+@RequestMapping(value="Circle")
+@RestController
+public class Circle {
+
+	
+	
+	double r=5.8;
+
+	@GetMapping("/perimeter")
+	public double perimeter()
+	{
+		int r=5;
+		return 2*Math.PI*(r*r);
+	}
+	
+	@GetMapping("/area")
+	
+	public double area()
+	{
+		return Math.PI*(r*r);
+		
+	}
+}

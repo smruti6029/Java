@@ -1,0 +1,12 @@
+package com.DAO_FOR_MCQ;
+
+import com.mcq.entity.Question;
+
+public class DataInsert {
+
+	public static void InsertQuestion(Question question) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

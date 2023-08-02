@@ -1,0 +1,17 @@
+package com.Teacher;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Id;
+
+import org.hibernate.Transaction;
+
+@Entity
+public class Branch 
+{
+	private int branch_id;
+	private String branch;
+	
+	
+
+}

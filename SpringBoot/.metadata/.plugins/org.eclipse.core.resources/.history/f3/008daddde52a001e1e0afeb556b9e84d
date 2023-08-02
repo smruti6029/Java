@@ -1,0 +1,98 @@
+package com.InsertData;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.DAO_FOR_MCQ.DataInsert;
+import com.DAO_FOR_MCQ.GetAllQesAns;
+import com.mcq.entity.AnswersForQuestion;
+import com.mcq.entity.Question;
+import com.mcq.entity.User_Input_Answer;
+import com.mcq.entity.UsersInputClass;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class GetAllQuestionAnswer {
+
+	public static void getQuestion() throws NumberFormatException, IOException 
+	
+	
+	{
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		List<Question> questionanswer=GetAllQesAns.getAllQuestion();
+		
+		
+		User_Input_Answer userinput=new User_Input_Answer();
+		System.out.println("Enter User Id");
+		int user_id=Integer.parseInt(bf.readLine());
+		
+		
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		conf.setProperty("hibernate.show_sql", "false");
+		SessionFactory factory = conf.buildSessionFactory();	
+		Session session=factory.openSession();
+		
+		UsersInputClass user = session.get(UsersInputClass.class,user_id);
+		
+		
+		for(Question que:questionanswer)
+		{
+			
+			List<AnswersForQuestion> ans=que.getAnswers();
+					System.out.println(que.getQuestion());
+					int option=0;
+			
+					while(true)
+					{
+					for(AnswersForQuestion answer:ans)
+					{
+						option++;
+						System.out.println(option+"."+answer.getAnswers());
+					}
+					System.out.println("Enter Answer");
+					
+					int answers=Integer.parseInt(bf.readLine());
+				
+					
+					if(answers==1) {
+						userinput.setAns(new AnswersForQuestion(ans.get(answers).getId()));
+						System.out.println("Submit");
+					}
+					if(answers==2) {
+						userinput.setAns(new AnswersForQuestion(ans.get(answers-1).getId()));
+						System.out.println("Submit");
+					}
+					if(answers==3) {
+						userinput.setAns(new AnswersForQuestion(ans.get(answers-1).getId()));
+						System.out.println("Submit");
+					}
+					if(answers==4) {
+						userinput.setAns(new AnswersForQuestion(ans.get(answers-1).getId()));
+						System.out.println("Submit");
+					}
+					
+					userinput.setUser(user);
+					userinput.setQuestion(que);
+				
+					DataInsert.addUserInput(userinput);
+					
+				
+					
+					
+		}
+		
+		
+	}
+
+}
+}
+
+

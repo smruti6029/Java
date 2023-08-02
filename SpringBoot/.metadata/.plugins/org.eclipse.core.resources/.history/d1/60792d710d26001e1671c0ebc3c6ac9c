@@ -1,0 +1,47 @@
+package com.TeacherManagement.TeacherManagemnt;
+import com.Teacher.*;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	Configuration conf=new Configuration();
+		System.out.println("Hello");
+    	conf.configure("hibernate.cfg.xml");
+    	SessionFactory factory = conf.buildSessionFactory();
+    	TeacherDetalis td=new TeacherDetalis("Smruti Ranjan Nayak");
+    	TeacherDetalis td1=new TeacherDetalis("Sandeep Bali");
+    	Session session=factory.openSession();
+    	Transaction trn=session.beginTransaction();
+    	session.save(td);
+    	session.save(td1);
+    	Branch branch=new Branch(1,"IT");
+    	Branch branch1=new Branch(2,"CSE");
+    	Branch branch2=new Branch(3,"Os");
+    	session.save(branch);
+    	session.save(branch1);
+    	session.save(branch2);
+    	 // For Update
+    	TeacherDetalis brancch_id = session.get(TeacherDetalis.class, 1);
+    	brancch_id.setTeacher_branch(new Branch(1));
+    	session.update(brancch_id);
+    	brancch_id.setTeacher_branch(new Branch(2));
+    	session.update(brancch_id);
+    	System.out.println(brancch_id.getTeacher_branch().getBranch());
+    	
+
+    	trn.commit();
+    	session.close();
+    	
+    
+    }
+}

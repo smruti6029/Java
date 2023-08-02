@@ -1,0 +1,57 @@
+package com.DAO_FOR_MCQ;
+
+import java.util.*;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+import com.mcq.entity.User_Input_Answer;
+
+public class UserQuestionAnswerById {
+
+	public static List<User_Input_Answer> getQuestionanswer() 
+	{
+		
+		
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		SessionFactory factory = conf.buildSessionFactory();	
+		Session session=factory.openSession();
+		List<User_Input_Answer> userAnswerList = session.createQuery("User_Input_Answer", User_Input_Answer.class)
+				.getResultList();
+		
+		
+		
+		return userAnswerList;
+		
+	}
+
+}
+
+//User user = session.get(User.class, userId);
+//
+//String userAnswerQuery = "From UserInputAnswer";
+//List<UserInputAnswer> userAnswerList = session.createQuery(userAnswerQuery, UserInputAnswer.class)
+//		.getResultList();
+//
+//String orginalAnswerQuery = "From QuestionAnswersMapping";
+//List<QuestionAnswersMapping> orginalAnswerList = session
+//		.createQuery(orginalAnswerQuery, QuestionAnswersMapping.class).getResultList();
+//
+//Integer marks = 0;
+//
+//for (QuestionAnswersMapping orginalAnswer : orginalAnswerList) {
+//
+//	for (UserInputAnswer userAnswer : userAnswerList) {
+//		if (userAnswer.getUser().getId() == userId) {
+//			if (userAnswer.getQuestion().getId() == orginalAnswer.getQuestion().getId()) {
+//				if (userAnswer.getOption().getId() == orginalAnswer.getOption().getId()) {
+//					marks++;
+//				}
+//			}
+//		}
+//	}
+//}

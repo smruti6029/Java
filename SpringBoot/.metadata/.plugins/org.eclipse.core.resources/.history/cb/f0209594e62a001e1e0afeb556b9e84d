@@ -1,0 +1,12 @@
+package com.validation;
+
+public class UserValidation {
+
+	public static boolean vallidUser(int user_id) 
+	
+	{
+		
+		return false;
+	}
+
+}

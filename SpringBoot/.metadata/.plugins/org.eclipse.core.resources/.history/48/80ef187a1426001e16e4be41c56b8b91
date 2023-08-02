@@ -1,0 +1,22 @@
+package com.Teacher;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Id;
+
+import org.hibernate.Transaction;
+
+@Entity
+public class Branch 
+{
+	@Id
+	@Column(name="teacher_id")
+	private int branch_id;
+	private String branch;
+	private TeacherDetalis teacher_id;
+	
+	
+	
+
+}

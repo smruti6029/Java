@@ -1,0 +1,24 @@
+package com.InsertQuestion;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class InsertQuestionAnswer {
+
+	public static void insertdata() throws IOException 
+	{
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter Question");
+		String question=bf.readLine();
+		int id=Integer.parseInt(bf.readLine());
+		System.out.println("Enter Answers");
+		
+		
+		
+		
+		
+		
+	}
+
+}

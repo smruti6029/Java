@@ -1,0 +1,16 @@
+package com.DAO_FOR_MCQ;
+
+public class GetAllQesAns 
+
+{
+
+	public static void getAllQuestion() {
+		
+		
+	}
+	
+	
+	
+	
+
+}

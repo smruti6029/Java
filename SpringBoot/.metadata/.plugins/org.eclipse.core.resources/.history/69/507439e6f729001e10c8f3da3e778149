@@ -1,0 +1,58 @@
+package com.InsertData;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import com.DAO_FOR_MCQ.DataInsert;
+import com.mcq.entity.*;
+import java.util.*;
+public class InsertQuestionAnswer {
+
+	public static void insertdata() throws NumberFormatException, IOException 
+	{
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter Question");
+		Question question=new Question();
+		int id=Integer.parseInt(bf.readLine());
+		question.setId(id);
+		String que1=bf.readLine();
+		question.setQuestion(que1);
+		System.out.println("Enter Answer");
+		AnswersForQuestion ans1=new AnswersForQuestion();
+		AnswersForQuestion ans2=new AnswersForQuestion();
+		AnswersForQuestion ans3=new AnswersForQuestion();
+		AnswersForQuestion ans4=new AnswersForQuestion();
+		
+		List<AnswersForQuestion> answers=new ArrayList<AnswersForQuestion>();
+		System.out.println("Enter Answer");
+		String opt1=bf.readLine();
+		ans1.setAnswers(opt1);
+		ans1.setQuestion(question);	
+		answers.add(ans1);
+		
+		String opt2=bf.readLine();
+		ans2.setAnswers(opt2);
+		ans2.setQuestion(question);	
+		answers.add(ans2);
+		
+		String opt3=bf.readLine();
+		ans3.setAnswers(opt3);
+		ans3.setQuestion(question);	
+		answers.add(ans3);
+		
+		String opt4=bf.readLine();
+		ans4.setAnswers(opt4);
+		ans4.setQuestion(question);	
+		answers.add(ans4);
+		
+		
+		DataInsert.InsertQuestion(manager);
+//		DataInsert.InsertDataMnager(manager1);
+//		DataInsert.InsertDataQuality(q);
+//		
+//		DataInsert.InsertDataDevloper(devList);
+	}
+
+}

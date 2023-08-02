@@ -1,0 +1,140 @@
+package com.DAO_FOR_MCQ;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.mcq.entity.AnswersForQuestion;
+import com.mcq.entity.Question;
+import com.mcq.entity.QuestionWithAnswer;
+import com.mcq.entity.UsersInputClass;
+
+public class DataInsert {
+
+	public static void InsertQuestion(Question question) 
+	{
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		SessionFactory factory = conf.buildSessionFactory();
+		System.out.println(question);
+		Session session=factory.openSession();
+		Transaction trn=session.beginTransaction();
+		
+		session.save(question);
+		System.out.println("Bye");
+		
+		trn.commit();
+		session.close();
+		}
+
+	public static void InsertOption(List<AnswersForQuestion> answers) 
+	
+	{
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		SessionFactory factory = conf.buildSessionFactory();
+		System.out.println("Hello  1");
+		System.out.println(answers);	
+		Session session=factory.openSession();
+		System.out.println("hello");
+		Transaction trn=session.beginTransaction();
+		answers.forEach((v)->{
+			
+			session.save(v);
+			
+			
+		});
+		trn.commit();
+		
+		
+	}
+
+	public static void InsertAnswer(QuestionWithAnswer qA) {
+		
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		SessionFactory factory = conf.buildSessionFactory();
+		System.out.println(qA);
+		Session session=factory.openSession();
+		Transaction trn=session.beginTransaction();
+		
+		session.save(qA);
+		System.out.println("Bye");
+		
+		trn.commit();
+		session.close();
+		
+	}
+
+	public static void addUser(UsersInputClass user) 
+	{
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		SessionFactory factory = conf.buildSessionFactory();
+		Session session=factory.openSession();
+		Transaction trn=session.beginTransaction();
+		
+		session.save(user);
+		System.out.println("Bye");
+		
+		trn.commit();
+		session.close();
+				
+	}
+	
+
+}
+//{
+//	Configuration conf=new Configuration();
+//	conf.configure("hibernate.cfg.xml");
+//	SessionFactory factory = conf.buildSessionFactory();
+//	System.out.println(employes);	
+//	Session session=factory.openSession();
+//	session.save(employes);	
+//	Transaction trn=session.beginTransaction();
+//	trn.commit();
+//	session.close();
+//	
+//	
+//}
+//public static void InsertDataDevloper(List<devloper> devList) 
+//
+//{
+//			Configuration conf=new Configuration();
+//			conf.configure("hibernate.cfg.xml");
+//			SessionFactory factory = conf.buildSessionFactory();
+//			System.out.println(devList);	
+//			Session session=factory.openSession();
+//			devList.forEach((v)->{
+//				
+//				session.save(v);
+//				
+//			});
+//			
+//			
+//			Transaction trn=session.beginTransaction();
+//			trn.commit();
+//			session.close();
+//
+//
+//}
+//
+//public static void InsertDataQuality(quality quality) 
+//
+//{
+//				Configuration conf=new Configuration();
+//				conf.configure("hibernate.cfg.xml");
+//				SessionFactory factory = conf.buildSessionFactory();
+//				System.out.println(quality);	
+//				Session session=factory.openSession();
+//				session.save(quality);	
+//				Transaction trn=session.beginTransaction();
+//				trn.commit();
+//				session.close();
+//	
+//	
+//}
+

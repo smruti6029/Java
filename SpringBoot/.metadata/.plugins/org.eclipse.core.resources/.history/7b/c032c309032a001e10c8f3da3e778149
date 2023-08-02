@@ -1,0 +1,68 @@
+package com.mcq.entity;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="question")
+public class Question 
+{
+	@Id
+	@GeneratedValue(strategy =GenerationType.IDENTITY)
+	int id;
+	
+	int question_id;
+	String question;
+	
+	@OneToMany
+	private  List <AnswersForQuestion> answers;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getQuestion_id() {
+		return question_id;
+	}
+
+	public void setQuestion_id(int question_id) {
+		this.question_id = question_id;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public List<AnswersForQuestion> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<AnswersForQuestion> answers) {
+		this.answers = answers;
+	}
+
+	public Question(int id, int question_id, String question, List<AnswersForQuestion> answers) {
+		super();
+		this.id = id;
+		this.question_id = question_id;
+		this.question = question;
+		this.answers = answers;
+	}
+
+	
+	
+}

@@ -1,0 +1,25 @@
+package com.adduserdetais;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import com.DAO_FOR_MCQ.DataInsert;
+import com.mcq.entity.UsersInputClass;
+import com.question.QuestionAnswer;
+
+public class AddUserDetalis {
+
+	public static void addUser() throws IOException 
+	{
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		String name=bf.readLine();
+		String gmail=bf.readLine();
+		UsersInputClass user=new UsersInputClass();
+		user.setEmail(gmail);
+		user.setName(name);
+		QuestionAnswer.QuestionAns(user);
+		
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.InsertData;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import com.DAO_FOR_MCQ.DataInsert;
+import com.mcq.entity.*;
+import java.util.*;
+public class InsertQuestionAnswer {
+	
+
+	public static void insertdata() throws NumberFormatException, IOException 
+	{
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		Question question=new Question();
+		question.setQuestion("What is java");
+//		question.setId(1);
+		question.setQuestion_id(1);
+		question.
+		
+		DataInsert.InsertQuestion(question);
+//		DataInsert.InsertOption(answers);
+//		DataInsert.InsertDataQuality(q);
+//		
+//		DataInsert.InsertDataDevloper(devList);
+	}
+
+}

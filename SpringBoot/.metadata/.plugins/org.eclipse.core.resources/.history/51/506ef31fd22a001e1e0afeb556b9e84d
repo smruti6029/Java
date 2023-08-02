@@ -1,0 +1,46 @@
+package com.DAO_FOR_MCQ;
+
+import java.util.*;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+import com.mcq.entity.User_Input_Answer;
+
+public class UserQuestionAnswerById {
+
+	public static User_Input_Answer getQuestionanswer() 
+	{
+		
+		
+		Configuration conf=new Configuration();
+		conf.configure("hibernate.cfg.xml");
+		SessionFactory factory = conf.buildSessionFactory();	
+		Session session=factory.openSession();
+		
+		
+		
+		
+		
+		return questionanswer;
+		
+	}
+
+}
+
+
+//Configuration conf=new Configuration();
+//conf.configure("hibernate.cfg.xml");
+//SessionFactory factory = conf.buildSessionFactory();	
+//Session session=factory.openSession();
+//
+//Transaction trn=session.beginTransaction();
+//
+//
+//System.out.println("devloper");
+//devloper  getdevloper= session.get(devloper.class, id);
+//System.out.println("devloper  " + getdevloper.getName());
+//System.out.println("Manager  "+getdevloper.getManager().getName());
