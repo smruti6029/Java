@@ -1,0 +1,11 @@
+INDEX VERSION 1.132+/home/rapidsoft/Documents/Spring Core/.metadata/.plugins/org.eclipse.jdt.core
+1148316196.index
+3744439202.index
+3712707989.index
+3084181874.index
+2322252545.index
+2708540552.index
+2954327922.index
+1747842871.index
+3006603805.index
+1865797976.index

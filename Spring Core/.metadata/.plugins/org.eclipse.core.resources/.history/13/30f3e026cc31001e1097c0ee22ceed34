@@ -1,0 +1,8 @@
+package Com.SpringCode;
+
+public class Student {
+
+	
+		int studentId;
+		int student_name;
+}
